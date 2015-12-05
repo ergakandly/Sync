@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+       "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+       "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+       
+<struts-config>
+	<form-beans>
+		<form-bean name="attendanceForm" type="com.hris.attendance.form.AttendanceForm" />
+	</form-beans>
+	<action-mappings>
+		<action path="/attendance"
+			type="com.hris.attendance.handler.AttendanceAction"
+			scope="request"
+			name="attendanceForm">
+			<forward name="success"					path="/WEB-INF/jsp/index.jsp"></forward>
+			<!-- <forward name="syncData"				path="/WEB-INF/jsp/SyncDataAttendance.jsp"></forward> -->
+		</action>
+	</action-mappings>
+	
+	<message-resources parameter="application"/>
+</struts-config>   
